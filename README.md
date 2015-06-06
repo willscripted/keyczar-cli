@@ -1,18 +1,17 @@
 `keyczar-cli`
 ======================
 
-Simple bash wrapper around [KeyczarTool](https://github.com/google/keyczar).
+Simple bash wrapper around [KeyczarTool](https://github.com/google/keyczar). KeyczarTool manages your keyczar crypto keys. Its design makes key-rotation a trivial task.
 
 Nothing new or special here. The hosts of this jar seem to have been dismantled. This project provides it and a wrapper that makes it a bit more straightforward for non-java folks.
 
 Install
 ---------------
 
-```bash
-cd /some/install/dir && git clone git@github.com:will-ob/keyczar-cli.git
-# cd somewhere in $PATH
-ln -s /some/install/dir/keyczar-cli/keyczar
-```
+1. `mkdir ~/bin`
+2. Add `PATH=$PATH:~/bin` to `~/.profile`
+3. `cd ~/ && git clone git@github.com:will-ob/keyczar-cli.git`
+4. `ln -s ~/keyczar-cli/keyczar ~/bin`
 
 
 Use
@@ -37,6 +36,16 @@ Caution
 -------
 
 This project is provided for development purposes. For production software, one ought to compile this tool from source or verify its checksum (which will fail, because the manifest was modified).
+
+See Also
+------------
+
+- [clj-keyczar](https://github.com/circleci/clj-keyczar) clojure keyczar bindings
+
+Thanks
+-------------
+
+Thanks much to the Keyczar team for doing all the hard work.
 
 License
 ----------
