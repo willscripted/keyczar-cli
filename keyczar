@@ -6,11 +6,12 @@ real_path_to_this_script=$(realpath $dir/keyczar)
 real_path_to_this_dir=$(dirname $real_path_to_this_script)
 real_path_to_keyczar_jar=$real_path_to_this_dir/KeyczarTool-0.71f-060112.jar
 
+javaopts="-Dlog4j.configuration=file://$real_path_to_this_dir/log4j.properties"
+
 if [[ "$@" =~ --location= ]]
 then
-  java -jar $real_path_to_keyczar_jar "$@"
+  java $javaopts -jar $real_path_to_keyczar_jar "$@"
 else
-  echo "Running in pwd: $(pwd)"
-  java -jar $real_path_to_keyczar_jar "$@" --location=$(pwd)
+  java $javaopts -jar $real_path_to_keyczar_jar "$@" --location=$(pwd)
 fi
 

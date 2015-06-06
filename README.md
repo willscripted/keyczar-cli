@@ -1,7 +1,7 @@
 `keyczar-cli`
 ======================
 
-Simple bash wrapper around [KeyczarTool]().
+Simple bash wrapper around [KeyczarTool](https://github.com/google/keyczar).
 
 Nothing new or special here. The hosts of this jar seem to have been dismantled. This project provides it and a wrapper that makes it a bit more straightforward for non-java folks.
 
@@ -19,7 +19,8 @@ Use
 -----------
 
 ```
-cd /path/to/keydir
+mkdir -p /path/to/project/keyset
+cd /path/to/project/keyset
 
 keyczar create --purpose=(sign|crypt)
 
@@ -35,9 +36,7 @@ See [keyczar documentation](http://keyczar.googlecode.com/files/keyczar05b.pdf) 
 Caution
 -------
 
-This project is provided for development purposes. I could not locate the source for this project and the jar file does not include it. For production software, one ought to compile this tool from source or verify its checksum.
-
-If you happen to know where to find the jars or the checksum, please open a github issue.
+This project is provided for development purposes. For production software, one ought to compile this tool from source or verify its checksum (which will fail, because the manifest was modified).
 
 License
 ----------
